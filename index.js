@@ -6,6 +6,18 @@ app.get('/', (req, res) => {
 	res.send('Hello, world!');
 });
 
+app.get("/hello", (req, res) => {
+	res.send("this is second route");
+});
+
+app.get("/hello/:name", (req, res) => {
+	res.send(`Hello, ${req.params.name}`);
+});
+
+app.post("/hello", (req, res) => {
+	res.send(`this is post route, you posted ${JSON.stringify(req.body)}}`);
+});
+
 app.listen(3000, () => {
 	console.log('App listening on port 3000');
 });
