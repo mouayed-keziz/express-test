@@ -18,7 +18,7 @@ app.get("/hello/:name", (req, res) => {
 app.post("/hello", (req, res) => {
 	res.send(`this is post route, you posted ${JSON.stringify(req.body)}}`);
 });
-
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3030;
+app.listen(PORT, () => {
 	console.log('App listening on port 3000');
 });
